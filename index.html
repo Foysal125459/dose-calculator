@@ -10,10 +10,19 @@
         <h2>💊 Dose Calculator</h2>
 
         <label>Calculation Type:</label>
-        <select id="calc_type">
+        <select id="calc_type" onchange="toggleFrequency()">
             <option value="dose">Per Dose</option>
             <option value="day">Per Day</option>
         </select><br><br>
+
+        <!-- BD / TDS Dropdown (Initially Hidden) -->
+        <div id="frequencyDiv" style="display:none;">
+            <label>Frequency:</label>
+            <select id="frequency">
+                <option value="bd">BD (2 Times)</option>
+                <option value="tds">TDS (3 Times)</option>
+            </select><br><br>
+        </div>
 
         <input id="weight" type="number" placeholder="Weight (kg)" required><br>
         <input id="dosekg" type="number" placeholder="Dose per kg (per dose or per day)" required><br>
