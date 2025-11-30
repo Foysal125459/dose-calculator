@@ -1,20 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Dose Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Dose Calculator</h2>
+    <div class="container">
+        <h2>💊 Dose Calculator</h2>
 
-    <input id="weight" placeholder="Weight (kg)" type="number"><br>
-    <input id="dosekg" placeholder="Dose per kg/day" type="number"><br>
-    <input id="unit" placeholder="Medicine Unit (e.g. mg)" type="number"><br>
-    <input id="strength" placeholder="Strength per 1 mL (e.g. mg/mL)" type="number"><br>
+        <label>Calculation Type:</label>
+        <select id="calc_type">
+            <option value="dose">Per Dose</option>
+            <option value="day">Per Day</option>
+        </select><br><br>
 
-    <button onclick="calculateDose()">Calculate</button>
+        <input id="weight" type="number" placeholder="Weight (kg)" required><br>
+        <input id="dosekg" type="number" placeholder="Dose per kg (per dose or per day)" required><br>
 
-    <p id="result"></p>
+        <input id="unit" type="number" placeholder="Medicine Unit (e.g. 1 mg)" required><br>
+        <input id="strength" type="number" placeholder="Strength per mL (e.g. 5 mg/mL)" required><br>
+
+        <button onclick="calculateDose()">Calculate</button>
+        <button onclick="resetForm()" class="secondary">Reset</button>
+
+        <p id="result"></p>
+
+        <p class="warning">⚠ Ensure all values are medically validated before use.</p>
+    </div>
 
     <script src="script.js"></script>
 </body>
